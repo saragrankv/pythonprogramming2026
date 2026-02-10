@@ -106,6 +106,13 @@ def calculate_daily_totals(data_list: list[list]) -> list[list]:
     return days_list
 
 def print_daily_totals (daily_totals: list) -> None:
+    """
+    Print the weekly summary to the console
+
+    Parameters:
+     daily_totals (list): List of daily totals calculated
+     by the calculate_daily_totals function
+    """
     print("Week 42 electricity consumption and production (kWh, by phase)")
     print("\nDay           Date           Consumption [kWh]              Production [kWh]")
     print("            (dd.mm.yyyy)    v1       v2      v3            v1      v2      v3")
