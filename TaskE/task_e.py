@@ -3,8 +3,8 @@
 
 """
 A program that reads electricity consumption and production
-data from a CSV file, calculates daily totals and prints it 
-to the console in a user-friendly table.
+data from CSV files, calculates daily totals and saves a 
+summary into a file in a user-friendly way.
 """
 
 from datetime import datetime, date
@@ -110,10 +110,11 @@ def write_summaries (daily_totals: list, week_number: int, filename: str) -> Non
     """
     Create a weekly summary based on the daily totals, a summary for the entire period,
     and write it to a file
+    
     Parameters:
-    daily_totals (list): list of daily totals calculated for the week
-    week_number (int): the number of the first week in the data
-    filename (str): the name of the file the summary is written to
+     daily_totals (list): list of daily totals calculated for the period
+     week_number (int): the number of the first week in the data
+     filename (str): the name of the file the summary is written to
     """
     weekly_summary = ""
     total_cons_p1 = 0.0
@@ -178,8 +179,7 @@ def write_summaries (daily_totals: list, week_number: int, filename: str) -> Non
             f.write(weekly_summary)
             print(f"{filename} created")
     except FileExistsError:
-        # Append the contents of the file if it already exists, separate
-        # new output from previous
+        # Append the contents of the file if it already exists, separate new output from previous
         with open(filename, "a", encoding="utf-8") as f:
             f.write("\n--- (new report begins here) ---\n\n" + weekly_summary)
             print(f"{filename} appended")
@@ -195,7 +195,7 @@ def main() -> None:
     data_week42 = read_data("week42.csv")
     for item in data_week42:
         data_list.append(item)
-    # Do the same for the third week
+    # Do the same for the third file
     data_week43 = read_data("week43.csv")
     for item in data_week43:
         data_list.append(item)
