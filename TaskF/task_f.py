@@ -89,6 +89,9 @@ def daily_summary(startdate: date, enddate: date, data_list: list) -> str:
      startdate (date): the start date given by the user
      enddate (date): the end date given by the user
      data_list (list): the data in a list of dictionaries with the correct datatypes
+    Returns:
+     summary (str): Summary of the chosen period formatted as a string
+
     """
     total_cons = 0.0
     total_prod = 0.0
