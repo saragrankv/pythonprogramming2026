@@ -10,7 +10,7 @@ of a custom time period, which it can write into a file.
 from datetime import datetime, date
 
 IN_FILE = "2025.csv"
-OUT_FILE = "summary.txt"
+OUT_FILE = "report.txt"
 MONTHS = [
     "",
     "January",

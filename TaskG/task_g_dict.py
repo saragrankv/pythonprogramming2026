@@ -126,7 +126,7 @@ def confirmation_summary(reservations: list[dict]) -> None:
      reservations (list): Reservations, list of dictionaries
     """
     confirmed : int = len([x for x in reservations[1:] if x["confirmed"]])
-    print(f'- Confirmed reservations: {confirmed} pcs\n- Not confirmed reservations: {len(reservations) - confirmed} pcs')
+    print(f'- Confirmed reservations: {confirmed} pcs\n- Not confirmed reservations: {len(reservations[1:]) - confirmed} pcs')
 
 def total_revenue(reservations: list[dict]) -> None:
     """

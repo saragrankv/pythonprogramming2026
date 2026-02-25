@@ -150,7 +150,7 @@ def confirmation_summary(reservations: list[Reservation]) -> None:
      reservations (list): Reservations
     """
     confirmed : int = len([x for x in reservations[1:] if x.is_confirmed()])
-    print(f'- Confirmed reservations: {confirmed} pcs\n- Not confirmed reservations: {len(reservations) - confirmed} pcs')
+    print(f'- Confirmed reservations: {confirmed} pcs\n- Not confirmed reservations: {len(reservations[1:]) - confirmed} pcs')
 
 def total_revenue(reservations: list[Reservation]) -> None:
     """
